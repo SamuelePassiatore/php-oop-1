@@ -14,4 +14,20 @@ class Movie
         $this->director = $director;
         $this->year = $year;
     }
+
+    // Methods all details
+    public function getMovieTitle()
+    {
+        return "Title " . $this->title;
+    }
+
+    public function getMovieDirector()
+    {
+        return "Director " . $this->director;
+    }
+
+    public function getMovieYear()
+    {
+        return "Year " . $this->year;
+    }
 }
