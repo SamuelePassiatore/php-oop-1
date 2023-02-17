@@ -1,11 +1,11 @@
-<body>
+<body class="bg-dark">
     <div class="container mt-5">
         <header>
-            <h1 class="text-center pb-3">Movies</h1>
+            <h1 class="text-center text-white pb-3">Movies</h1>
         </header>
         <main>
-            <table class="table">
-                <thead class="table-danger">
+            <table class="table table-dark">
+                <thead>
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Director</th>
@@ -13,7 +13,7 @@
                         <th scope="col">Genres</th>
                     </tr>
                 </thead>
-                <tbody class="table-warning">
+                <tbody>
                     <?php foreach ($movies as $movie) : ?>
                         <tr>
                             <td><?php echo $movie->getMovieTitle() ?></td>
