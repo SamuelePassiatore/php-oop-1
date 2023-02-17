@@ -32,9 +32,36 @@ class Movie
     }
 }
 
-// Creation movie objects
-$movie1 = new Movie("Inception", "Christopher Nolan", 2010);
-$movie2 = new Movie("Interstellar", "Christopher Nolan", 2014);
-$movie3 = new Movie("The Green Mile", "Frank Darabont", 1999);
-$movie4 = new Movie("300", "Zack Snyder", 2006);
-$movie5 = new Movie("Jurassic Park", "Steven Spielberg", 1993);
+// Creation movie objects 
+$movies = array(
+    new Movie("Inception", "Christopher Nolan", 2010),
+    new Movie("Interstellar", "Christopher Nolan", 2014),
+    new Movie("The Green Mile", "Frank Darabont", 1999),
+    new Movie("300", "Zack Snyder", 2006),
+    new Movie("Jurassic Park", "Steven Spielberg", 1993)
+);
+// $movie1 = new Movie("Inception", "Christopher Nolan", 2010);
+// $movie2 = new Movie("Interstellar", "Christopher Nolan", 2014);
+// $movie3 = new Movie("The Green Mile", "Frank Darabont", 1999);
+// $movie4 = new Movie("300", "Zack Snyder", 2006);
+// $movie5 = new Movie("Jurassic Park", "Steven Spielberg", 1993);
+
+?>
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Movie</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>
