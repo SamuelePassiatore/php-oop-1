@@ -2,12 +2,12 @@
 // Movie class
 class Movie
 {
-    //Properties or istance variables
+    //!Properties or istance variables
     public $title;
     public $director;
     public $year;
 
-    //Class constructor
+    //!Class constructor
     public function __construct($title, $director, $year)
     {
         $this->title = $title;
@@ -15,7 +15,7 @@ class Movie
         $this->year = $year;
     }
 
-    // Methods all details
+    //! Methods all details
     public function getMovieTitle()
     {
         return $this->title;
@@ -32,7 +32,20 @@ class Movie
     }
 }
 
-// Creation movie objects 
+class Genre
+{
+    //!Properties or istance variables
+    public $name;
+
+    //!Genre constructor
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+}
+
+
+// !Creation movie objects 
 $movies = array(
     new Movie("Inception", "Christopher Nolan", 2010),
     new Movie("Interstellar", "Christopher Nolan", 2014),
@@ -63,15 +76,15 @@ $movies = array(
 
 <body>
     <div class="container mt-5">
-        <table class="table table-warning">
-            <thead>
+        <table class="table">
+            <thead class="table-danger">
                 <tr>
                     <th scope="col">Title</th>
                     <th scope="col">Director</th>
                     <th scope="col">Year</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-warning">
                 <?php foreach ($movies as $movie) : ?>
                     <tr>
                         <td><?php echo $movie->getMovieTitle() ?></td>
