@@ -18,17 +18,17 @@ class Movie
     // Methods all details
     public function getMovieTitle()
     {
-        return "Title " . $this->title;
+        return $this->title;
     }
 
     public function getMovieDirector()
     {
-        return "Director " . $this->director;
+        return $this->director;
     }
 
     public function getMovieYear()
     {
-        return "Year " . $this->year;
+        return $this->year;
     }
 }
 
@@ -60,7 +60,11 @@ $movies = array(
 
 <body>
     <div>
-
+        <?php foreach ($movies as $movie) : ?>
+            <h1><?php echo $movie->getMovieTitle() ?></h1>
+            <p><?php echo $movie->getMovieDirector() ?></p>
+            <p><?php echo $movie->getMovieYear() ?></p>
+        <?php endforeach; ?>
     </div>
 </body>
 
