@@ -1,4 +1,17 @@
 <?php
+// Genre Class
+class Genre
+{
+    //!Properties or istance variables
+    public $name;
+
+    //!Genre constructor
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+}
+
 // Movie class
 class Movie
 {
@@ -6,13 +19,15 @@ class Movie
     public $title;
     public $director;
     public $year;
+    public $genres;
 
     //!Class constructor
-    public function __construct($title, $director, $year)
+    public function __construct($title, $director, $year, $genres)
     {
         $this->title = $title;
         $this->director = $director;
         $this->year = $year;
+        $this->genres = $genres;
     }
 
     //! Methods all details
@@ -30,29 +45,34 @@ class Movie
     {
         return $this->year;
     }
-}
 
-class Genre
-{
-    //!Properties or istance variables
-    public $name;
-
-    //!Genre constructor
-    public function __construct($name)
+    public function getMovieGenres()
     {
-        $this->name = $name;
+        $genreNames = '';
+        foreach ($this->genres as $genre) {
+            $genreNames .= $genre->name . ', ';
+        }
+        return $genreNames;
     }
 }
 
+//Genre
+$action_movies = new Genre("Action");
+$adventure_movies = new Genre("Adventure");
+$drama_movies = new Genre("Drama");
+$fantasy_movies = new Genre("Fantasy");
+$war_movies = new Genre("War");
 
+//Movie
 // !Creation movie objects 
 $movies = array(
-    new Movie("Inception", "Christopher Nolan", 2010),
-    new Movie("Interstellar", "Christopher Nolan", 2014),
-    new Movie("The Green Mile", "Frank Darabont", 1999),
-    new Movie("300", "Zack Snyder", 2006),
-    new Movie("Jurassic Park", "Steven Spielberg", 1993)
+    new Movie("Inception", "Christopher Nolan", 2010, array($action_movies, $drama_movies)),
+    new Movie("Interstellar", "Christopher Nolan", 2014, array($adventure_movies, $drama_movies)),
+    new Movie("The Green Mile", "Frank Darabont", 1999, array($drama_movies, $fantasy_movies)),
+    new Movie("300", "Zack Snyder", 2006, array($action_movies, $war_movies)),
+    new Movie("Jurassic Park", "Steven Spielberg", 1993, array($adventure_movies, $fantasy_movies))
 );
+
 // $movie1 = new Movie("Inception", "Christopher Nolan", 2010);
 // $movie2 = new Movie("Interstellar", "Christopher Nolan", 2014);
 // $movie3 = new Movie("The Green Mile", "Frank Darabont", 1999);
@@ -82,6 +102,7 @@ $movies = array(
                     <th scope="col">Title</th>
                     <th scope="col">Director</th>
                     <th scope="col">Year</th>
+                    <th scope="col">Genres</th>
                 </tr>
             </thead>
             <tbody class="table-warning">
@@ -90,6 +111,7 @@ $movies = array(
                         <td><?php echo $movie->getMovieTitle() ?></td>
                         <td><?php echo $movie->getMovieDirector() ?></td>
                         <td><?php echo $movie->getMovieYear() ?></td>
+                        <td><?php echo $movie->getMovieGenres() ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
